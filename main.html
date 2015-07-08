@@ -1,0 +1,19 @@
+<div ng-controller="MainController">
+
+	<div>
+		<p>
+		{{ post.content }}
+		<br>
+		Likes
+		<br>
+		<a href="">Like</a> 
+		<ul>
+			<li ng-repeat="comm in post.comments">
+				{{ comm }}
+			</li>
+		</ul>
+		</p>
+	</div>
+
+
+</div>
