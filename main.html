@@ -1,19 +1,46 @@
 <div ng-controller="MainController">
 
-	<div>
-		<p>
-		{{ post.content }}
-		<br>
-		Likes
-		<br>
-		<a href="">Like</a> 
-		<ul>
-			<li ng-repeat="comm in post.comments">
-				{{ comm }}
-			</li>
-		</ul>
-		</p>
+
+	<div class="col-md-3 col-md-offset-4">
+
+	<div class="post">
+	<img ng-src="{{ post.picture }} "> 
+	<b><a href=""> {{ post.author }} </a></b>
+	<br />
+	{{ post.content }}
+	<hr>
+	<a href="" ng-click="postLike()">
+						<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+						Like
+	</a> 
 	</div>
+	<div class="comments">
+		{{ post.likes }} people like this.
+		<hr>
+		<table>
+				<tbody>
+					<tr ng-repeat="comm in post.comments">
+							<td>
+							<img ng-src="{{ comm.picture }} "> 
+							<b><a href="">{{ comm.name }}</a></b>  {{ comm.content }}
+							<br>
 
+							<a class="commlike" href="" ng-click="commLike($index)">
+							Like
+													
+							</a> 
+							{{ comm.like }}
+							<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+							</td>						
+					</tr>
+				</tbody>
+		</table>
+		<form ng-submit="addComm()">
+		<img ng-src="{{ post.picture }} "> 
+		<input style="width:360px" type="text" placeholder="Write a comment..." ng-model="newComm" />
+		</form>
 
+	</div>
+	</div>
+	
 </div>
