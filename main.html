@@ -3,48 +3,67 @@
 
 	<div class="col-md-3 col-md-offset-4">
 
-	<div class="post">
-	<img ng-src="{{ post.picture }} "> 
-	<b><a href=""> {{ post.author }} </a></b>
-	<br />
-	{{ post.content }}
-	<hr>
-	<a href="" ng-click="postLike()">
-						<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-						Like
-	</a> 
-	</div>
-	<div class="comments">
-		{{ post.likes }} people like this.
-		<hr>
-		<div ng-show="commentsToShow">
-			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-			<a href="" ng-click="viewMoreComments()" >View more comments</a>
+		<div class="post">
+			<img ng-src="{{ post.picture }} "> 
+			<b><a href=""> {{ post.author }} </a></b>
+			<br />
+			{{ post.content }}
+			<hr>
+			<div class="col-md-3">
+				<a class="commControl" href="" ng-click="postLike()">
+					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+					Like
+				</a> 
+			</div>
+			<div class="col-md-4">
+				<a class="commControl" href=""  ng-click="commBoxFocus()">
+					<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+					Comment
+				</a>
+			</div>
+			<div class="col-md-3">
+				<a class="commControl" href="" >
+					<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+					Share
+				</a>
+			</div>
 		</div>
-		<table>
+
+		<div class="comments">
+			{{ post.likes }} people like this.
+			<hr>
+			<div ng-show="commentsToShow">
+				<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+				<a href="" ng-click="viewMoreComments()" >View more comments</a>
+			</div>
+			<table>
 				<tbody>
 					<tr ng-repeat="comm in post.comments | limitTo: commentsToShow">
-							<td>
-							<img ng-src="{{ comm.picture }} "> 
+						<td>
+							<img class="comm-pic" ng-src="{{ comm.picture }} " /> 
+							
 							<b><a href="">{{ comm.name }}</a></b>  {{ comm.content }}
-							<br>
+							<br >
 
 							<a class="commlike" href="" ng-click="commLike($index)">
-							Like
-													
+								Like
+								
 							</a> 
-							{{ comm.likes }}
+							
 							<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-							</td>						
+							{{ comm.likes }}
+
+							
+						</td>						
 					</tr>
 				</tbody>
-		</table>
-		<form ng-submit="addComm()">
-		<img ng-src="{{ post.picture }} "> 
-		<input style="width:360px" type="text" placeholder="Write a comment..." ng-model="newComm" />
-		</form>
+			</table>
+			<form ng-submit="addComm()">
+				<img ng-src="{{ post.picture }} "> 
+				<input id="xyz" class="commBox" style="width:360px" type="text" placeholder="Write a comment..." ng-model="newComm" />
+			</form>
 
-	</div>
+		</div>
 	</div>
 	
 </div>

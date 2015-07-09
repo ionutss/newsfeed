@@ -67,6 +67,12 @@
 		$scope.viewMoreComments = function()
 		{
 			$scope.commentsToShow = null;
+			$('#xyz').focus();
+		};
+
+		$scope.commBoxFocus = function()
+		{
+			$('#xyz').focus();
 		};
 	};
 
