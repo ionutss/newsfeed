@@ -4,6 +4,11 @@
 
 	var MainController = function($scope) {
 
+		$scope.currentUser = {
+			name: "Mark Zuckerberg",
+			picture: "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNjg3ODAzNDA0.jpg",
+		};
+
 		$scope.post = {
 
 			author: "Mark Zuckerberg",
@@ -13,19 +18,19 @@
 			comments: [
 			{
 
-				name: "Steve",
+				name: "Steve Mark",
 				picture: "http://www.campusidea.com/images/male_profile.gif",
 				content: "nice",
 				likes: 1
 			},
 			{
-				name: "Kate",
+				name: "Kate A.",
 				picture: "http://www.blackfoot.ca/wp-content/uploads/2014/09/profile-photo.jpg",
 				content: "cool",
 				likes: 0
 			},
 			{
-				name: "John",
+				name: "John Wick",
 				picture: "http://media.cirrusmedia.com.au/LW_Media_Library/LW-603-p28-partner-profile.jpg",
 				content: "meh",
 				likes: 0
@@ -53,8 +58,8 @@
 		{
 			$scope.post.comments.push(
 			{
-				name: "Mark Zuckerberg",
-				picture: "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNjg3ODAzNDA0.jpg",
+				name: $scope.currentUser.name,
+				picture: $scope.currentUser.picture,
 				content: $scope.newComm,
 				likes: 0
 			});
