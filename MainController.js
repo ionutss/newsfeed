@@ -51,19 +51,13 @@
 
 		$scope.addComm = function()
 		{
-			
-			var commNr = $scope.post.comments.length;
-			
-			$scope.post.comments[commNr] =
+			$scope.post.comments.push(
 			{
 				name: "Mark Zuckerberg",
 				picture: "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNjg3ODAzNDA0.jpg",
 				content: $scope.newComm,
 				likes: 0
-			};
-
-
-
+			});
 		};
 
 		
