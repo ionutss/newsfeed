@@ -9,14 +9,14 @@
 			author: "Mark Zuckerberg",
 			picture: "http://a4.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTIwNjA4NjMzNjg3ODAzNDA0.jpg",
 			content: "This is some preview text.",
-			likes: 0,
+			likes: 2,
 			comments: [
 			{
 
 				name: "Steve",
 				picture: "http://www.campusidea.com/images/male_profile.gif",
 				content: "nice",
-				likes: 0
+				likes: 1
 			},
 			{
 				name: "Kate",
@@ -58,10 +58,16 @@
 				content: $scope.newComm,
 				likes: 0
 			});
+
+			$scope.newComm = null;
 		};
 
-		
+		$scope.commentsToShow = 2;
 
+		$scope.viewMoreComments = function()
+		{
+			$scope.commentsToShow = null;
+		};
 	};
 
 	app.controller('MainController', ['$scope', MainController]);

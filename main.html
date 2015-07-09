@@ -17,9 +17,13 @@
 	<div class="comments">
 		{{ post.likes }} people like this.
 		<hr>
+		<div ng-show="commentsToShow">
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+			<a href="" ng-click="viewMoreComments()" >View more comments</a>
+		</div>
 		<table>
 				<tbody>
-					<tr ng-repeat="comm in post.comments">
+					<tr ng-repeat="comm in post.comments | limitTo: commentsToShow">
 							<td>
 							<img ng-src="{{ comm.picture }} "> 
 							<b><a href="">{{ comm.name }}</a></b>  {{ comm.content }}
