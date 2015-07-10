@@ -1,0 +1,26 @@
+{
+  "name": "post",
+  "version": "1.0.0",
+  "description": "node back",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionutss/newsfeed.git"
+  },
+  "keywords": [
+    "post"
+  ],
+  "author": "Ionut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ionutss/newsfeed/issues"
+  },
+  "homepage": "https://github.com/ionutss/newsfeed#readme",
+  "dependencies": {
+    "express": "^4.13.1"
+  }
+}

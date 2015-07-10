@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
 	var app = angular.module("newsfeed");
 
@@ -41,15 +41,15 @@
 		$scope.postLike = function()
 		{
 			$scope.post.likes += 1;
-			
+
 		};
 
 		$scope.commLike = function(index)
 		{
 
 			$scope.post.comments[index].likes += 1;
-			
-			
+
+
 		};
 
 		$scope.newComm = '';
